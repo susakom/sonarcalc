@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Calc Service</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<h2>Calc Service</h2><br>
+
+<div class="form-container">
+<form
+      th:action="@{/add}"
+      th:object="${addDto}" method="POST">
+    <div class="main">
+        <div class="field">
+            <label for="firstValue">first Value:</label>
+            <input type="text" id="firstValue" onfocus="clearInput(this)" th:field="*{firstValue}"/>
+            <br/>
+        </div>
+        <div class="field">
+            <label for="secondValue">second Value:</label>
+            <input type="text" id="secondValue" onfocus="clearInput(this)" th:field="*{secondValue}"/>
+            <br/>
+        </div>
+        <div class="field">
+            <label for="result">result:</label>
+            <input type="text" id="result" th:field="*{result}" readonly/>
+            <br/>
+        </div>
+        <div class="field">
+            <input type="submit" value="Add"/>
+            <br/>
+        </div>
+    </div>
+</form>
+</div>
+
+</body>
+</html>
